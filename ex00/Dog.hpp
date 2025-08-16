@@ -6,7 +6,7 @@
 /*   By: aokhapki <aokhapki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 20:21:41 by aokhapki          #+#    #+#             */
-/*   Updated: 2025/08/13 21:48:18 by aokhapki         ###   ########.fr       */
+/*   Updated: 2025/08/16 14:54:30 by aokhapki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Dog : public Animal
 	public:
 	
 		Dog();
-		Dog(const std::string& name);
+		Dog(const std::string& type);
 		Dog(const Dog& src);
 		Dog& operator=(const Dog& rhs);
 		~Dog();

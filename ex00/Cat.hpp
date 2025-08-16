@@ -6,7 +6,7 @@
 /*   By: aokhapki <aokhapki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 20:21:44 by aokhapki          #+#    #+#             */
-/*   Updated: 2025/08/13 21:39:47 by aokhapki         ###   ########.fr       */
+/*   Updated: 2025/08/16 14:54:24 by aokhapki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Cat : public Animal
 {
 public:
 	Cat ();
-	Cat (const std::string& name);
+	Cat (const std::string& type);
 	Cat (const Cat& src);
 	Cat& operator=(const Cat& rhs);
 	~Cat();

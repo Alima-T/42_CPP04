@@ -6,7 +6,7 @@
 /*   By: aokhapki <aokhapki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 20:21:25 by aokhapki          #+#    #+#             */
-/*   Updated: 2025/08/13 21:45:36 by aokhapki         ###   ########.fr       */
+/*   Updated: 2025/08/16 16:04:17 by aokhapki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,40 +14,39 @@
 
 Dog::Dog() : Animal("Dog")
 {
-    std::cout << "Dog default constructor called" << std::endl;
+    std::cout << "\033[34mDog default constructor\033[0m" << std::endl;
 }
 
-Dog::Dog(const std::string& customType) 
+Dog::Dog(const std::string& type) : Animal(type)
 {
-    type = customType;
-    std::cout << "Dog parameterized constructor called with type: " << type << std::endl;
+    std::cout << "\033[34mDog parameterized constructor\033[0m" << std::endl;
 }
 
 Dog::Dog(const Dog& src) : Animal(src)
 {
-    std::cout << "Dog copy constructor called" << std::endl;
+    std::cout << "\033[34mDog copy constructor\033[0m" << std::endl;
 }
 
 Dog& Dog::operator=(const Dog& rhs) 
 {
     if (this != &rhs) 
-	{
-        type = rhs.type;
-        std::cout << "Dog copy assignment operator called for type: " << type << std::endl;
+    {
+        Animal::operator=(rhs);  // Call base class assignment
+        std::cout << "\033[34mDog copy assignment operator\033[0m" << std::endl;
     } 
-	else 
-	{
-        std::cout << "Dog self-assignment detected for type: " << type << std::endl;
+    else 
+    {
+        std::cout << "\033[34mDog self-assignment detected\033[0m" << std::endl;
     }
     return *this;
 }
 
 Dog::~Dog() 
 {
-    std::cout << "Dog destructor called" << std::endl;
+    std::cout << "\033[34mDog destructor\033[0m" << std::endl;
 }
 
 void Dog::makeSound() const 
 {
-    std::cout << "Woof! Woof!" << std::endl;
+	std::cout << "\033[34mWoof! Woof!\033[0m" << std::endl;
 }
