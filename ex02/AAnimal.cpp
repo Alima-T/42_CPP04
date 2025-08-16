@@ -6,7 +6,7 @@
 /*   By: aokhapki <aokhapki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/16 17:03:30 by aokhapki          #+#    #+#             */
-/*   Updated: 2025/08/16 17:16:54 by aokhapki         ###   ########.fr       */
+/*   Updated: 2025/08/16 17:51:54 by aokhapki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ AAnimal::AAnimal(const std::string& type) : m_type(type)
 {
 	std::cout << "AAnimal parameterized constructor\n";
 }
+
 AAnimal::AAnimal(const AAnimal &src) : m_type(src.m_type)
 {
 	std::cout << "AAnimal copy constructor\n";
@@ -33,6 +34,7 @@ AAnimal& AAnimal::operator=(const AAnimal &rhs)
 	{
 		m_type = rhs.m_type;
 	}
+	return *this;
 }
 
 AAnimal::~AAnimal()
