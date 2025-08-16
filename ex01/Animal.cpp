@@ -6,7 +6,7 @@
 /*   By: aokhapki <aokhapki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 20:21:21 by aokhapki          #+#    #+#             */
-/*   Updated: 2025/08/16 14:55:54 by aokhapki         ###   ########.fr       */
+/*   Updated: 2025/08/16 16:24:27 by aokhapki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ Animal::~Animal()
 
 void Animal::makeSound() const
 {
-    std::cout << "Animal sound: " << m_type << " makes a sound!" << std::endl;
+    std::cout << "Animal sound: " << m_type << " makes some animal sound!" << std::endl;
 }
 
 std::string Animal::getType() const
