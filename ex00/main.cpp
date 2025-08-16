@@ -6,7 +6,7 @@
 /*   By: aokhapki <aokhapki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 20:21:34 by aokhapki          #+#    #+#             */
-/*   Updated: 2025/08/13 21:49:42 by aokhapki         ###   ########.fr       */
+/*   Updated: 2025/08/16 16:16:28 by aokhapki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,31 +18,31 @@
 
 int main()
 {
-    const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
+    const Animal* animal = new Animal();
+    const Animal* d = new Dog();
+    const Animal* c = new Cat();
 
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    i->makeSound(); // Cat sound
-    j->makeSound(); // Dog sound
-    meta->makeSound(); // Animal sound
+    std::cout << d->getType() << " " << std::endl; 
+	d->makeSound(); // Dog sound  
+    std::cout << c->getType() << " " << std::endl;
+ 	c->makeSound(); // Cat sound
+    animal->makeSound(); // Animal sound
 
-    delete meta;
-    delete j;
-    delete i;
+    delete animal;
+    delete d;
+    delete c;
 
     std::cout << "\n=== Wrong Animal Test ===" << std::endl;
 
-    const WrongAnimal* wrong = new WrongAnimal();
+    const WrongAnimal* wrongAnimal = new WrongAnimal();
     const WrongAnimal* wrongCat = new WrongCat();
 
-    std::cout << wrong->getType() << " " << std::endl;
+    std::cout << wrongAnimal->getType() << " " << std::endl; 
+	wrongAnimal->makeSound(); // WrongAnimal sound
     std::cout << wrongCat->getType() << " " << std::endl;
-    wrong->makeSound();       // WrongAnimal sound
-    wrongCat->makeSound();    // Still WrongAnimal sound!
+    wrongCat->makeSound(); // should be uniq for WrongCat, but because it's not polymorphical it makes still WrongAnimal sound!
 
-    delete wrong;
+    delete wrongAnimal;
     delete wrongCat;
 
     return 0;
