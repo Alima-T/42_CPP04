@@ -5,24 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aokhapki <aokhapki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/16 17:36:00 by aokhapki          #+#    #+#             */
-/*   Updated: 2025/08/20 15:30:12 by aokhapki         ###   ########.fr       */
+/*   Created: 2025/08/13 21:00:18 by aokhapki          #+#    #+#             */
+/*   Updated: 2025/08/20 17:47:20 by aokhapki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
+#include "Brain.hpp"
+#include <iostream>
 
-Cat::Cat() : AAnimal("Cat")
+Cat::Cat() : AAnimal("Cat"), m_brain(new Brain())
 {
 	std::cout << "\033[33mCat default constructor\033[0m" << std::endl;
 }
 
-Cat::Cat(const std::string& type) : AAnimal(type)
+Cat::Cat(const std::string& type) : AAnimal(type),  m_brain(new Brain())
 {
-	std::cout << "\033[33mCat parameterized constructor for type\033[0m" << std::endl;
+	std::cout << "\033[33mCat parameterized constructor\033[0m" << std::endl;
 }
 	
-Cat::Cat(const Cat& src) : AAnimal(src)
+Cat::Cat(const Cat& src) : AAnimal(src), m_brain(new Brain(*src.m_brain))
 {
 	std::cout << "\033[33mCat copy constructor\033[0m" << std::endl;
 }
@@ -32,6 +34,8 @@ Cat& Cat::operator=(const Cat& rhs)
 	if (this != &rhs) 
 	{
 		AAnimal::operator=(rhs);  // Call base class assignment
+		delete m_brain;
+		m_brain = new Brain(*rhs.m_brain);
 		std::cout << "\033[33mCat copy assignment operator\033[0m" << std::endl;
 	} 
 	else 
@@ -43,10 +47,16 @@ Cat& Cat::operator=(const Cat& rhs)
 
 Cat::~Cat()
 {
+	delete m_brain;
 	std::cout << "\033[33mCat destructor\033[0m" << std::endl;
 }
 
-void Cat::makeSound() const 
+void Cat::makeSound() const
 {
 	std::cout << "\033[33mMeow! Meow!\033[0m" << std::endl;
+}
+
+Brain* Cat::getBrain() const
+{
+	return m_brain;
 }

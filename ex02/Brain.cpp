@@ -6,7 +6,7 @@
 /*   By: aokhapki <aokhapki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/16 14:50:54 by aokhapki          #+#    #+#             */
-/*   Updated: 2025/08/20 17:43:38 by aokhapki         ###   ########.fr       */
+/*   Updated: 2025/08/20 17:43:20 by aokhapki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,5 @@ std::string Brain::getIdea(int i) const
 {
 	if (i >= 0 && i < 100)
 		return m_ideas[i];
-	return ""; //empty string
+	return ""; // return an empty string
 }

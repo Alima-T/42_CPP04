@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aokhapki <aokhapki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/16 17:35:21 by aokhapki          #+#    #+#             */
-/*   Updated: 2025/08/16 17:36:43 by aokhapki         ###   ########.fr       */
+/*   Created: 2025/08/13 20:21:44 by aokhapki          #+#    #+#             */
+/*   Updated: 2025/08/20 17:47:21 by aokhapki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 #define CAT_HPP
 
 #include "AAnimal.hpp"
-#include <iostream>
+#include "Brain.hpp"
 
 class Cat : public AAnimal
 {
+private:
+	Brain* m_brain;
 public:
 	Cat ();
 	Cat (const std::string& type);
@@ -26,5 +28,6 @@ public:
 	~Cat();
 
 	void makeSound() const override;
+	Brain* getBrain()const;
 };
 #endif

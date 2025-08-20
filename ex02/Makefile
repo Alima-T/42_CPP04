@@ -6,12 +6,12 @@
 #    By: aokhapki <aokhapki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/16 14:05:21 by aokhapki          #+#    #+#              #
-#    Updated: 2025/08/16 17:50:10 by aokhapki         ###   ########.fr        #
+#    Updated: 2025/08/20 17:47:57 by aokhapki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = abstract
-SRCS = main.cpp AAnimal.cpp Dog.cpp Cat.cpp
+SRCS = main.cpp AAnimal.cpp Dog.cpp Cat.cpp Brain.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 CXX = c++

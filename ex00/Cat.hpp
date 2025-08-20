@@ -6,7 +6,7 @@
 /*   By: aokhapki <aokhapki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 20:21:44 by aokhapki          #+#    #+#             */
-/*   Updated: 2025/08/16 14:54:24 by aokhapki         ###   ########.fr       */
+/*   Updated: 2025/08/20 16:36:45 by aokhapki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ public:
 	Cat& operator=(const Cat& rhs);
 	~Cat();
 
-	void makeSound() const;
+	void makeSound() const override;
 };
 #endif

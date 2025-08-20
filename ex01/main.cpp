@@ -6,7 +6,7 @@
 /*   By: aokhapki <aokhapki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/16 15:01:27 by aokhapki          #+#    #+#             */
-/*   Updated: 2025/08/20 15:50:56 by aokhapki         ###   ########.fr       */
+/*   Updated: 2025/08/20 18:03:14 by aokhapki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,48 +16,63 @@
 #include <iostream>
 
 int main() {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
 
-	delete j; // must call Brain and Dog destructors
-	delete i; // must call Brain and Cat destructors
+    delete j; // must call Brain and Dog destructors
+    delete i; // must call Brain and Cat destructors
 
-	const int size = 4;
-	Animal* animals[size];
+    const int size = 4;
+    Animal* animals[size];
 
-	// half with Dogs, half with Cats
-	for (int k = 0; k < size / 2; ++k)
-		animals[k] = new Dog();
-	for (int k = size / 2; k < size; ++k)
-		animals[k] = new Cat();
+    // half with Dogs, half with Cats
+    for (int k = 0; k < size / 2; ++k)
+        animals[k] = new Dog();
+    for (int k = size / 2; k < size; ++k)
+        animals[k] = new Cat();
 
 
 	// Test deep copy for Dog
-	Dog* originalDog = new Dog();
-	originalDog->getBrain()->setIdea(0, "Chase the ball");
+    Dog* originalDog = new Dog();
+    originalDog->getBrain()->setIdea(0, "Chase the ball");
+	// copy constructor (deep copy)
+    Dog* copiedDog = new Dog(*originalDog); 
+    std::cout << "Original dog Brain idea: " << originalDog->getBrain()->getIdea(0) << std::endl;
+    std::cout << "Copied dog Brain idea:   " << copiedDog->getBrain()->getIdea(0) << std::endl;
 
-	Dog* copiedDog = new Dog(*originalDog); // copy constructor (deep copy)
-	std::cout << "Original dog Brain idea: " << originalDog->getBrain()->getIdea(0) << std::endl;
-	std::cout << "Copied dog Brain idea:   " << copiedDog->getBrain()->getIdea(0) << std::endl;
+    // Change original to ensure deep copy
+    originalDog->getBrain()->setIdea(0, "Eat food");
+    std::cout << "After modification, original dog Brain idea: " << originalDog->getBrain()->getIdea(0) << std::endl;
+    std::cout << "After modification, copied dog Brain idea:   " << copiedDog->getBrain()->getIdea(0) << std::endl;
+
+
+
+    Dog basic;
+    basic.getBrain()->setIdea(0, "Catch the cat");
+    Dog copyBasic = basic; // copy constructor
+    copyBasic.getBrain()->setIdea(0, "Play with ball");
+
+    std::cout << "first idea: " << basic.getBrain()->getIdea(0) << std::endl;
+    std::cout << "second idea: " << copyBasic.getBrain()->getIdea(0) << std::endl;
+	
+	//Cat
+	Cat* originalCat = new Cat();
+	originalCat->getBrain()->setIdea(0, "Chase the mause");
+	// copy constructor (deep copy)
+	Cat* copiedCat = new Cat(*originalCat); 
+	std::cout << "Original Cat Brain idea: " << originalCat->getBrain()->getIdea(0) << std::endl;
+	std::cout << "Copied Cat Brain idea:   " << copiedCat->getBrain()->getIdea(0) << std::endl;
 
 	// Change original to ensure deep copy
-	originalDog->getBrain()->setIdea(0, "Eat food");
-	std::cout << "After modification, original dog Brain idea: " << originalDog->getBrain()->getIdea(0) << std::endl;
-	std::cout << "After modification, copied dog Brain idea:   " << copiedDog->getBrain()->getIdea(0) << std::endl;
-
-	delete originalDog;
-	delete copiedDog;
-
-	Dog basic;
-	basic.getBrain()->setIdea(0, "Catch the cat");
-	Dog copyBasic = basic; // copy constructor
-	copyBasic.getBrain()->setIdea(0, "Play with ball");
-
-	std::cout << "first idea: " << basic.getBrain()->getIdea(0) << std::endl;
-	std::cout << "second idea: " << copyBasic.getBrain()->getIdea(0) << std::endl;
+	originalCat->getBrain()->setIdea(0, "Play with tail");
+	std::cout << "After modification, original Cat Brain idea: " << originalCat->getBrain()->getIdea(0) << std::endl;
+	std::cout << "After modification, copied Cat Brain idea: " << copiedCat->getBrain()->getIdea(0) << std::endl;
 	
-	// Delete all
-	for (int k = 0; k < size; ++k)
-		delete animals[k];
-	return 0;
+	delete originalDog;
+    delete copiedDog;
+	delete originalCat;
+	delete copiedCat;
+    for (int k = 0; k < size; ++k)
+        delete animals[k];
+    return 0;
 }
