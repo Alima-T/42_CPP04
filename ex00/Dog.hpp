@@ -6,7 +6,7 @@
 /*   By: aokhapki <aokhapki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 20:21:41 by aokhapki          #+#    #+#             */
-/*   Updated: 2025/08/16 14:54:30 by aokhapki         ###   ########.fr       */
+/*   Updated: 2025/08/20 19:13:39 by aokhapki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Dog : public Animal
 		Dog& operator=(const Dog& rhs);
 		~Dog();
 		
-		void makeSound() const;
+		void makeSound() const override;
 };
 
 #endif

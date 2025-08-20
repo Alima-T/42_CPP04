@@ -6,7 +6,7 @@
 /*   By: aokhapki <aokhapki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 20:21:41 by aokhapki          #+#    #+#             */
-/*   Updated: 2025/08/20 16:12:04 by aokhapki         ###   ########.fr       */
+/*   Updated: 2025/08/20 19:14:08 by aokhapki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ class Dog : public Animal
 private:
 	Brain* m_brain;
 public:
-		Dog();
-		Dog(const std::string& type);
-		Dog(const Dog& src);
-		Dog& operator=(const Dog& rhs);
-		~Dog();
-		
-		void makeSound() const override;
-		Brain* getBrain()const;
+	Dog();
+	Dog(const std::string& type);
+	Dog(const Dog& src);
+	Dog& operator=(const Dog& rhs);
+	~Dog();
+	
+	void makeSound() const override;
+	Brain* getBrain()const;
 };
 
 #endif
