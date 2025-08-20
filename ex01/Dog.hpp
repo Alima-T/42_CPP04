@@ -6,7 +6,7 @@
 /*   By: aokhapki <aokhapki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 20:21:41 by aokhapki          #+#    #+#             */
-/*   Updated: 2025/08/16 15:32:23 by aokhapki         ###   ########.fr       */
+/*   Updated: 2025/08/20 16:12:04 by aokhapki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Dog : public Animal
 {
 private:
-    Brain* m_brain;
+	Brain* m_brain;
 public:
 		Dog();
 		Dog(const std::string& type);
@@ -27,7 +27,7 @@ public:
 		Dog& operator=(const Dog& rhs);
 		~Dog();
 		
-		void makeSound() const;
+		void makeSound() const override;
 		Brain* getBrain()const;
 };
 

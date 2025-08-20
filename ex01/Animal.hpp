@@ -6,7 +6,7 @@
 /*   By: aokhapki <aokhapki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 20:21:15 by aokhapki          #+#    #+#             */
-/*   Updated: 2025/08/16 15:19:12 by aokhapki         ###   ########.fr       */
+/*   Updated: 2025/08/20 16:20:14 by aokhapki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 	Animal& operator=(const Animal& rhs);
 	virtual ~Animal();
 
-	virtual void makeSound() const; //must be virtual
+	virtual void makeSound() const; //must be virtual, must be overrided after
 	std::string getType() const;
 };
 

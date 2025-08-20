@@ -6,7 +6,7 @@
 /*   By: aokhapki <aokhapki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 20:21:44 by aokhapki          #+#    #+#             */
-/*   Updated: 2025/08/16 15:32:38 by aokhapki         ###   ########.fr       */
+/*   Updated: 2025/08/20 16:11:54 by aokhapki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Cat : public Animal
 {
 private:
-    Brain* m_brain;
+	Brain* m_brain;
 public:
 	Cat ();
 	Cat (const std::string& type);
@@ -27,7 +27,7 @@ public:
 	Cat& operator=(const Cat& rhs);
 	~Cat();
 
-	void makeSound() const;
+	void makeSound() const override;
 	Brain* getBrain()const;
 };
 #endif
