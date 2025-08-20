@@ -6,7 +6,7 @@
 /*   By: aokhapki <aokhapki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 20:21:46 by aokhapki          #+#    #+#             */
-/*   Updated: 2025/08/16 14:36:28 by aokhapki         ###   ########.fr       */
+/*   Updated: 2025/08/20 15:10:43 by aokhapki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,16 @@
 class WrongAnimal 
 {
 protected:
-    std::string m_type;
+	std::string m_type;
 public:
-    WrongAnimal();
+	WrongAnimal();
 	WrongAnimal(const std::string& type);
 	WrongAnimal(const WrongAnimal& src);
 	WrongAnimal& operator=(const WrongAnimal &rhs);
 	virtual ~WrongAnimal();
 	
-    void makeSound() const; //critical error, Static binding only, because not virtual
-    std::string getType() const;
+	void makeSound() const; //critical error, Static binding only, because not virtual
+	std::string getType() const;
 };
 
 #endif
